@@ -36,8 +36,9 @@ pipeline {
         failure {
             echo '❌ Build failed!'
         }
-        success {
-            echo '✅ Build succeeded!'
-        }
+    success {
+        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
     }
+}
+
 }
